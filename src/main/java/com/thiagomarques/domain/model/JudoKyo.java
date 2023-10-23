@@ -9,10 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "judo_kyo")
+@Entity(name = "tb_judokyo")
 public class JudoKyo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +18,7 @@ public class JudoKyo {
 
     private String name;
 
-    @OneToMany(mappedBy = "judoKyo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<JudoThrow> throwList;
 
        public String getName() {
