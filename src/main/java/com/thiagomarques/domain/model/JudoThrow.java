@@ -1,17 +1,25 @@
 package com.thiagomarques.domain.model;
 
-public class JudoThrow {
-    private String name;
-    private String description;
-    private String video_url;
-    private String image_url;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-    public JudoThrow(String name, String description, String video_url, String image_url) {
-        this.name = name;
-        this.description = description;
-        this.video_url = video_url;
-        this.image_url = image_url;
-    }
+@Entity
+@Table(name = "judo_throw") 
+public class JudoThrow {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    private String description;
+
+    private String video_url;
+
+    private String image_url;
 
     public String getName() {
         return name;
