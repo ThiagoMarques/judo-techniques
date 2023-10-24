@@ -41,6 +41,7 @@ public class JudoThrow {
 
     public String getVideo_url() {
         return video_url;
+        //https://player.vimeo.com/video/732788369?h=16ff32b1ea
     }
 
     public void setVideo_url(String video_url) {
