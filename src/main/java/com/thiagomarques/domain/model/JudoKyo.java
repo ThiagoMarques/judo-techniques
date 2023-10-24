@@ -21,7 +21,11 @@ public class JudoKyo {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<JudoThrow> throwList;
 
-       public String getName() {
+    public Long getId() {
+        return id;
+    }
+    
+    public String getName() {
         return name;
     }
 
