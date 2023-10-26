@@ -39,13 +39,14 @@ class DaiGokyo {
     +throws: List<JudoThrow>
 }
 
-class JudoThrow {
-    +id: Int
+  class JudoThrow {
+    +id: Long
     +name: String
     +description: String
     +video_url: String
     +image_url: String
-}
+    -group: Technique
+  }
 
 Gokyo "1" -- "*" Technique : contains
 Technique "1" -- "*" JudoThrow : contains
