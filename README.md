@@ -5,21 +5,24 @@ Projeto para demonstração de grupo de golpes de Judô padronizados pelo Go Kyo
 ```mermaid
 classDiagram
     class JudoThrow {
-        +id: Long
-        +name: String
-        +videoUrl: String
-        +imageUrl: String
-        +description: String
-        --
-        +getId(): Long
-        +setId(id: Long): void
-        +getName(): String
-        +setName(name: String): void
-        +getVideoUrl(): String
-        +setVideoUrl(videoUrl: String): void
-        +getImageUrl(): String
-        +setImageUrl(imageUrl: String): void
-        +getDescription(): String
-        +setDescription(description: String): void
+        -Long id
+        -String name
+        -String videoUrl
+        -String imageUrl
+        -String description
+        -String groupName
+        +Long getId()
+        +void setId(Long id)
+        +String getGroupName()
+        +void setGroupName(String groupName)
+        +String getName()
+        +void setName(String name)
+        +String getVideoUrl()
+        +void setVideoUrl(String videoUrl)
+        +String getImageUrl()
+        +void setImageUrl(String imageUrl)
+        +String getDescription()
+        +void setDescription(String description)
     }
+
 ```
