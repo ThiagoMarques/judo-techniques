@@ -1,27 +1,35 @@
 package com.thiagomarques.domain.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 
-@Entity(name = "tb_judothrow")
+@Entity(name = "tb_judo_throw")
 public class JudoThrow {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String name;
-    private String description;
-    private String video_url;
-    private String image_url;
 
-    @ManyToOne
-    private Technique group; // Campo para identificar a qual grupo o golpe pertence
+    @Column(name = "video_url")
+    private String videoUrl;
+
+    @Column(name = "image_url")
+    private String imageUrl;
+
+    private String description;
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -32,38 +40,27 @@ public class JudoThrow {
         this.name = name;
     }
 
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getVideo_url() {
-        return video_url;
-    }
-
-    public void setVideo_url(String video_url) {
-        this.video_url = video_url;
-    }
-
-    public String getImage_url() {
-        return image_url;
-    }
-
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
-    }
-
-    public Technique getGroup() {
-        return group;
-    }
-
-    public void setGroup(Technique group) {
-        this.group = group;
-    }
-
-    public void setId(Long id2) {
     }
 }
