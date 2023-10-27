@@ -31,7 +31,6 @@ public class JudoThrowServiceImpl implements JudoThrowService {
 
     @Transactional
     public JudoThrow create(JudoThrow judoThrowToCreate) {
-        // Add necessary validation logic similar to UserServiceImpl if required.
         return this.judoThrowRepository.save(judoThrowToCreate);
     }
 
@@ -39,18 +38,15 @@ public class JudoThrowServiceImpl implements JudoThrowService {
     public JudoThrow update(Long id, JudoThrow judoThrowToUpdate) {
         JudoThrow dbJudoThrow = this.findById(id);
         
-        // Verifique se o ID do objeto a ser atualizado corresponde ao ID do objeto no banco de dados
         if (!dbJudoThrow.getId().equals(judoThrowToUpdate.getId())) {
             throw new BusinessException("Update IDs must be the same.");
         }
         
-        // Atualize os campos do dbJudoThrow com os valores do judoThrowToUpdate
         dbJudoThrow.setName(judoThrowToUpdate.getName());
         dbJudoThrow.setVideoUrl(judoThrowToUpdate.getVideoUrl());
         dbJudoThrow.setImageUrl(judoThrowToUpdate.getImageUrl());
         dbJudoThrow.setDescription(judoThrowToUpdate.getDescription());
         
-        // Salve as alterações no banco de dados
         return this.judoThrowRepository.save(dbJudoThrow);
     }
     
@@ -60,6 +56,4 @@ public class JudoThrowServiceImpl implements JudoThrowService {
         JudoThrow dbJudoThrow = this.findById(id);
         this.judoThrowRepository.delete(dbJudoThrow);
     }
-
-    // Add other methods or validation if required.
 }

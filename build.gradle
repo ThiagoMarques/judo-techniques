@@ -26,7 +26,7 @@ dependencies {
 
 tasks.jar {
   manifest {
-    attributes["Main-Class"] = "dio.apirestsantander.Application"
+    attributes["Main-Class"] = "com.thiagomarques.Application"
   }
 }
 
